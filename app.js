@@ -87,8 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.onloadTurnstileCallback = function() {
         if (typeof turnstile !== 'undefined' && document.getElementById('turnstile-widget')) {
             turnstile.render('#turnstile-widget', {
-                // ⚠️ تنبيه هام للإطلاق الرسمي: استبدل المفتاح التجريبي أدناه بمفتاح الموقع الحي (Live Sitekey) من Cloudflare Turnstile
-                sitekey: '1x00000000000000000000AA', // Cloudflare always-pass test sitekey
+                // تم الربط بالمفتاح الحي الرسمي لموقع Tabseet Tech من Cloudflare Turnstile
+                sitekey: '0x4AAAAAAD9zUhcLm_sbSrUq', // Tabseet Tech Live Sitekey
                 callback: (token) => { window.turnstileToken = token; },
                 'error-callback': () => { console.warn('[Turnstile] Challenge encountered an error.'); }
             });
@@ -325,5 +325,3 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => shareBtn.click(), 500);
     }
 });
-
-
