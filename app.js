@@ -177,6 +177,50 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else {
                         throw new Error((json && json.error) ? json.error : 'لم نتمكن من استخراج الفيديو من السيرفر.');
                     }
+                } else if (res.status === 422 && (url.toLowerCase().includes('tiktok.com') || url.toLowerCase().includes('vt.tiktok.com'))) {
+                    // Turnstile passed, but worker extraction failed (Cloudflare WAF blocked worker)
+                    // Fallback to client-side extraction to bypass Worker-to-Worker blocks
+                    try {
+                        const tikRes = await fetch(`https://www.tikwm.com/api/?url=${encodeURIComponent(url)}`, {
+                            headers: { 'Accept': 'application/json, text/plain, */*' }
+                        });
+                        const tikJson = await tikRes.json();
+                        if (tikJson && tikJson.data && tikJson.data.play) {
+                            fetchBtn.disabled = false;
+                            hideAllStates();
+                            if (videoPlatformName) videoPlatformName.textContent = 'TikTok HD';
+                            if (videoTitle) videoTitle.textContent = tikJson.data.title || 'فيديو تيك توك المستخرج - جودة أصلية';
+                            
+                            const hdUrl = tikJson.data.hdplay || tikJson.data.play;
+                            const sdUrl = tikJson.data.play;
+                            const mp3Url = tikJson.data.music || sdUrl;
+                            
+                            window.downloadLinks = {
+                                'mp4-hd': hdUrl,
+                                'mp4-sd': sdUrl,
+                                'mp3': mp3Url
+                            };
+                            
+                            const primaryDownloadLink = document.getElementById('primary-download-link');
+                            if (primaryDownloadLink) {
+                                primaryDownloadLink.setAttribute('href', hdUrl);
+                                primaryDownloadLink.setAttribute('download', 'tabseet-video-hd.mp4');
+                            }
+                            
+                            if (stateResults) {
+                                stateResults.classList.add('active');
+                                if (window.innerWidth <= 768) {
+                                    stateResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }
+                            }
+                            if (typeof turnstile !== 'undefined') turnstile.reset();
+                            window.turnstileToken = null;
+                            return;
+                        }
+                    } catch (e) {
+                        console.warn('[App Engine] Client fallback failed:', e.message);
+                    }
+                    throw new Error('عفواً، لم نتمكن من استخراج هذا الفيديو حالياً. قد يكون الفيديو خاصاً (Private)، أو تم حذفه من المنصة.');
                 } else {
                     let errText = 'حدث خطأ أثناء معالجة الرابط (HTTP ' + res.status + ').';
                     try {
