@@ -85,7 +85,11 @@ export async function onRequestPost(context) {
         if (lowerUrl.includes('tiktok.com') || lowerUrl.includes('vt.tiktok.com')) {
             try {
                 const tikRes = await fetch(`https://www.tikwm.com/api/?url=${encodeURIComponent(cleanUrl)}`, {
-                    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+                    headers: {
+                        'Accept': 'application/json, text/plain, */*',
+                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                        'Referer': 'https://www.tiktok.com/'
+                    }
                 });
                 if (tikRes.ok) {
                     const tikJson = await tikRes.json();
