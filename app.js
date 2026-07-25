@@ -284,6 +284,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // 4.5 Force Blob Download for Cross-Origin URLs (Prevents browser from playing video instead of downloading)
+    if (primaryDownloadLink) {
+        primaryDownloadLink.addEventListener('click', async (e) => {
+            const href = primaryDownloadLink.getAttribute('href');
+            // Only intercept if it's a real external HTTP link (not # or blob)
+            if (href && href.startsWith('http')) {
+                e.preventDefault();
+                
+                const originalText = downloadBtnText ? downloadBtnText.textContent : 'جاري التحميل...';
+                if (downloadBtnText) downloadBtnText.textContent = 'جاري التجهيز والتحميل ⏳...';
+                primaryDownloadLink.style.pointerEvents = 'none';
+                primaryDownloadLink.style.opacity = '0.7';
+
+                try {
+                    const res = await fetch(href);
+                    if (!res.ok) throw new Error('Network response was not ok');
+                    const blob = await res.blob();
+                    const blobUrl = URL.createObjectURL(blob);
+                    
+                    const tempLink = document.createElement('a');
+                    tempLink.href = blobUrl;
+                    tempLink.download = primaryDownloadLink.getAttribute('download') || 'tabseet-video.mp4';
+                    document.body.appendChild(tempLink);
+                    tempLink.click();
+                    document.body.removeChild(tempLink);
+                    
+                    setTimeout(() => URL.revokeObjectURL(blobUrl), 10000); // Cleanup memory
+                } catch (err) {
+                    console.warn('[Downloader] Blob fetch failed, falling back to new tab:', err);
+                    window.open(href, '_blank');
+                } finally {
+                    if (downloadBtnText) downloadBtnText.textContent = originalText;
+                    primaryDownloadLink.style.pointerEvents = 'auto';
+                    primaryDownloadLink.style.opacity = '1';
+                }
+            }
+        });
+    }
+
     // 5. Service Worker Registration & Offline Readiness
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
