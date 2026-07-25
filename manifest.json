@@ -1,0 +1,81 @@
+{
+  "id": "com.tabseettech.downloader",
+  "name": "Tabseet Tech | تحميل فيديوهات بدون علامة مائية",
+  "short_name": "Tabseet Tech",
+  "description": "أداة مجانية، سريعة وخفيفة جداً لتحميل الفيديوهات والريلز والستوري من تيك توك، فيسبوك، إنستجرام وتويتر بأعلى جودة Full HD بدون علامة مائية.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "orientation": "portrait-primary",
+  "dir": "rtl",
+  "lang": "ar-EG",
+  "categories": ["utilities", "productivity", "social"],
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "تحميل تيك توك",
+      "short_name": "تيك توك",
+      "description": "تحميل فيديو تيك توك بدون علامة مائية",
+      "url": "./tiktok-downloader?source=shortcut",
+      "icons": [{ "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "تحميل فيسبوك",
+      "short_name": "فيسبوك",
+      "description": "تحميل ريلز وفيديوهات فيسبوك HD",
+      "url": "./facebook-downloader?source=shortcut",
+      "icons": [{ "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "تحميل إنستجرام",
+      "short_name": "إنستجرام",
+      "description": "تحميل ريلز وستوري إنستجرام بسهولة",
+      "url": "./instagram-downloader?source=shortcut",
+      "icons": [{ "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "تحميل تويتر (X)",
+      "short_name": "تويتر",
+      "description": "تحميل فيديوهات إكس وتويتر بجودة عالية",
+      "url": "./twitter-downloader?source=shortcut",
+      "icons": [{ "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ],
+  "share_target": {
+    "action": "/",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}

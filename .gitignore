@@ -1,0 +1,27 @@
+# Scratch & Helper Scripts
+*.py
+update_bundle.js
+fix_links.js
+check_rtl.py
+
+# Raw Design Assets & Temporary Mockups
+mobile.png
+الوجو.png
+*.psd
+*.ai
+
+# Environment & Secrets
+.env
+.env.local
+*.secret
+
+# OS & Logs
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+
+# Node / Cache
+node_modules/
+.cache/
+.wrangler/

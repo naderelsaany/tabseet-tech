@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#10B981" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="512" height="512" rx="128" fill="#0A0A0A" />
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="none" stroke="#10B981" stroke-width="4" stroke-opacity="0.2" />
+  
+  <!-- Minimalist TT / Download Lightning Symbol -->
+  <g filter="url(#shadow)">
+    <!-- Down Arrow with Lightning Sharp Angles -->
+    <path d="M256 120 V340 M176 260 L256 340 L336 260" fill="none" stroke="url(#grad)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Bottom Shelf -->
+    <line x1="160" y1="390" x2="352" y2="390" stroke="#F8FAFC" stroke-width="28" stroke-linecap="round" />
+  </g>
+</svg>

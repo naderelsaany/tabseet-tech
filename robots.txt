@@ -1,0 +1,36 @@
+# ==========================================================================
+# Tabseet Tech robots.txt
+# Optimized for Google Search, Bing, and AI Search Citations (2026 Standard)
+# ==========================================================================
+
+# Allow Search Engines and AI Search Browsers (for Citations & AI Overviews)
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Slurp
+User-agent: DuckDuckBot
+User-agent: Baiduspider
+User-agent: YandexBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: ClaudeBot
+User-agent: Applebot
+Allow: /
+
+# Block Abusive Scrapers & Heavy Training Bots from Backend API / Actions
+User-agent: Bytespider
+User-agent: CCBot
+User-agent: GPTBot
+Disallow: /api/
+Disallow: /fetch/
+Disallow: /download-stream/
+
+# Default Fallback for All Other Robots
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /fetch/
+Disallow: /scratch/
+Disallow: /tmp/
+
+# Sitemap Location
+Sitemap: https://tabseet-tech.pages.dev/sitemap.xml
