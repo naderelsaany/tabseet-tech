@@ -2,7 +2,7 @@
  * ==========================================================================
  * Tabseet Tech — Universal Frontend Logic & Interaction Engine (app.js)
  * Architecture: Vanilla JS, Zero Dependencies, High Performance
- * Supports: Home Page, TikTok, , ,  Landing Pages
+ * Supports: Home Page, TikTok Landing Page
  * ==========================================================================
  */
 

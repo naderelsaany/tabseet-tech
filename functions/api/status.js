@@ -6,9 +6,9 @@ export async function onRequestGet(context) {
         region: context.request.headers.get('CF-Ray') ? context.request.headers.get('CF-Ray').split('-')[1] : "MEA",
         services: {
             tiktok_downloader: { status: "operational", latency_ms: 12 },
-            facebook_downloader: { status: "operational", latency_ms: 15 },
-            instagram_downloader: { status: "operational", latency_ms: 18 },
-            twitter_downloader: { status: "operational", latency_ms: 14 },
+            _downloader: { status: "operational", latency_ms: 15 },
+            _downloader: { status: "operational", latency_ms: 18 },
+            _downloader: { status: "operational", latency_ms: 14 },
             kv_cache_layer: { status: "operational", hit_rate: "94.2%" },
             turnstile_security: { status: "operational", threats_blocked_last_24h: 1420 }
         }
