@@ -2,7 +2,7 @@
   "id": "com.tabseettech.downloader",
   "name": "Tabseet Tech | تحميل فيديوهات بدون علامة مائية",
   "short_name": "Tabseet Tech",
-  "description": "أداة مجانية، سريعة وخفيفة جداً لتحميل الفيديوهات والريلز والستوري من تيك توك بأعلى جودة Full HD بدون علامة مائية.",
+  "description": "أداة مجانية، سريعة وخفيفة جداً لتحميل فيديوهات تيك توك بأعلى جودة Full HD بدون علامة مائية.",
   "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",

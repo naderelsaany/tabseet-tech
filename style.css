@@ -787,6 +787,8 @@ button {
     color: var(--accent);
     line-height: 1;
     min-width: 32px;
+    flex-shrink: 0;
+    white-space: nowrap;
     direction: ltr;
 }
 
