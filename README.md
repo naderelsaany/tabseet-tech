@@ -8,7 +8,7 @@
 ---
 
 ## 📖 نبذة عن المشروع (Overview)
-موقع **Tabseet Tech (تبسيط تك)** هو تطبيق ويب تقدمي (PWA) حديث ومستقل، مصمم بهوية **Swiss Editorial Grid** وبنية **Asymmetric Bento Grid**. يتيح للمستخدمين استخراج وتحميل مقاطع الفيديو والريلز والاستوري من مختلف شبكات التواصل الاجتماعي (TikTok, Facebook, Instagram, Twitter/X) بالدقة الأصلية الكاملة (HD/Full HD) وبدون أي علامات مائية أو إعلانات مزعجة.
+موقع **Tabseet Tech (تبسيط تك)** هو تطبيق ويب تقدمي (PWA) حديث ومستقل، مصمم بهوية **Swiss Editorial Grid** وبنية **Asymmetric Bento Grid**. يتيح للمستخدمين استخراج وتحميل مقاطع الفيديو والريلز والاستوري من مختلف شبكات التواصل الاجتماعي (TikTok) بالدقة الأصلية الكاملة (HD/Full HD) وبدون أي علامات مائية أو إعلانات مزعجة.
 
 تم بناء المشروع هندسياً بأعلى معايير الأمان (Zero Fake Data, Fail-Closed Security, Best-in-Class SEO) وتحت إشراف مراجعات صارمة من فرق الذكاء الاصطناعي التقنية (**DeepSeek Tech Lead** & **Claude Tech Lead**).
 
@@ -49,10 +49,6 @@
 │   └── api/
 │       ├── extract.js           # الخادم الوسيط لاستخراج الوسائط (Cloudflare Worker)
 │       └── status.js            # نقطة مراقبة فحص جاهزية الخادم (Health Check)
-├── tiktok-downloader.html       # صفحة هبوط متخصصة لسيو تيك توك (800+ كلمة)
-├── facebook-downloader.html     # صفحة هبوط متخصصة لسيو فيسبوك (800+ كلمة)
-├── instagram-downloader.html    # صفحة هبوط متخصصة لسيو إنستجرام (800+ كلمة)
-├── twitter-downloader.html      # صفحة هبوط متخصصة لسيو تويتر / إكس (800+ كلمة)
 ├── tos.html, privacy.html...    # الصفحات القانونية وأمان البيانات والامتثال
 ├── robots.txt, sitemap.xml      # ملفات توجيه وأرشفة محركات البحث القياسية
 ├── llms.txt                     # ملف الإرشاد المساند لنماذج الذكاء الاصطناعي

@@ -1,3 +1,11 @@
+/**
+ * ==========================================================================
+ * Tabseet Tech — Universal Frontend Logic & Interaction Engine (app.js)
+ * Architecture: Vanilla JS, Zero Dependencies, High Performance
+ * Supports: Home Page, TikTok, , ,  Landing Pages
+ * ==========================================================================
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Theme Management (Light / Dark Mode with LocalStorage Persistence)
     const themeBtn = document.getElementById('theme-toggle-btn');
@@ -408,3 +416,5 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => shareBtn.click(), 500);
     }
 });
+
+
