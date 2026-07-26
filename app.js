@@ -1,11 +1,3 @@
-/**
- * ==========================================================================
- * Tabseet Tech — Universal Frontend Logic & Interaction Engine (app.js)
- * Architecture: Vanilla JS, Zero Dependencies, High Performance
- * Supports: Home Page, TikTok, Facebook, Instagram, Twitter Landing Pages
- * ==========================================================================
- */
-
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Theme Management (Light / Dark Mode with LocalStorage Persistence)
     const themeBtn = document.getElementById('theme-toggle-btn');
@@ -126,6 +118,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 fetchBtn.disabled = false;
                 hideAllStates();
                 if (errorMessage) errorMessage.textContent = 'عفواً، الرابط غير صحيح. تأكد من نسخ رابط الفيديو بالكامل (يبدأ بـ https://).';
+                if (stateError) stateError.classList.add('active');
+                return;
+            }
+
+            if (!url.toLowerCase().includes('tiktok.com') && !url.toLowerCase().includes('vt.tiktok.com')) {
+                fetchBtn.disabled = false;
+                hideAllStates();
+                if (errorMessage) errorMessage.textContent = 'عفواً، الأداة حالياً مخصصة لتحميل فيديوهات تيك توك فقط.';
                 if (stateError) stateError.classList.add('active');
                 return;
             }
