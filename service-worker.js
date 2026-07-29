@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tabseet-cache-v3';
+const CACHE_NAME = 'tabseet-cache-v4';
 const STATIC_ASSETS = [
     '/',
     '/index.html',
@@ -16,7 +16,8 @@ const STATIC_ASSETS = [
     '/tos.html',
     '/privacy.html',
     '/dmca.html',
-    '/security.html'
+    '/security.html',
+    '/llms.txt'
 ];
 
 // Install Event - Cache Core Assets

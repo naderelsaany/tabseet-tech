@@ -34,3 +34,6 @@ Disallow: /tmp/
 
 # Sitemap Location
 Sitemap: https://tabseet-tech.pages.dev/sitemap.xml
+
+# AI Map Location
+Sitemap: https://tabseet-tech.pages.dev/llms.txt

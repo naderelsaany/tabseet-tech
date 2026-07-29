@@ -6,57 +6,57 @@
     <!-- Main Landing Page -->
     <url>
         <loc>https://tabseet-tech.pages.dev/</loc>
-        <lastmod>2026-07-27</lastmod>
+        <lastmod>2026-07-29</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <!-- Legal and Security Pages -->
     <url>
         <loc>https://tabseet-tech.pages.dev/tos.html</loc>
-        <lastmod>2026-07-27</lastmod>
+        <lastmod>2026-07-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tabseet-tech.pages.dev/privacy.html</loc>
-        <lastmod>2026-07-27</lastmod>
+        <lastmod>2026-07-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tabseet-tech.pages.dev/dmca.html</loc>
-        <lastmod>2026-07-27</lastmod>
+        <lastmod>2026-07-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tabseet-tech.pages.dev/security.html</loc>
-        <lastmod>2026-07-27</lastmod>
+        <lastmod>2026-07-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <!-- Company, Support and API Pages -->
     <url>
         <loc>https://tabseet-tech.pages.dev/about.html</loc>
-        <lastmod>2026-07-27</lastmod>
+        <lastmod>2026-07-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tabseet-tech.pages.dev/contact.html</loc>
-        <lastmod>2026-07-27</lastmod>
+        <lastmod>2026-07-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tabseet-tech.pages.dev/status.html</loc>
-        <lastmod>2026-07-27</lastmod>
+        <lastmod>2026-07-29</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tabseet-tech.pages.dev/api-docs.html</loc>
-        <lastmod>2026-07-27</lastmod>
+        <lastmod>2026-07-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

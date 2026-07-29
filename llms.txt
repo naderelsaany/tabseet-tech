@@ -1,0 +1,18 @@
+# Tabseet Tech
+
+> أداة عربية سريعة ومجانية لتحميل الفيديوهات من تيك توك بجودة عالية وبدون علامة مائية (بدون إعلانات مزعجة).
+
+## Core Service
+- [تحميل فيديو تيك توك](https://tabseet-tech.pages.dev/): الأداة الرئيسية لتحميل الفيديوهات (MP4) والصوت (MP3) بجودة أصلية.
+
+## About & Support
+- [عن الموقع](https://tabseet-tech.pages.dev/about.html): قصة وهندسة موقع تبسيط تك.
+- [حالة الخوادم](https://tabseet-tech.pages.dev/status.html): متابعة حالة سيرفرات التحميل والخدمة.
+- [تواصل معنا](https://tabseet-tech.pages.dev/contact.html): طرق الدعم الفني.
+- [للمطورين](https://tabseet-tech.pages.dev/api-docs.html): توثيق الـ API للمطورين.
+
+## Legal
+- [شروط الاستخدام](https://tabseet-tech.pages.dev/tos.html): شروط الخدمة (ToS).
+- [سياسة الخصوصية](https://tabseet-tech.pages.dev/privacy.html): سياسة الخصوصية وكيفية حماية بياناتك.
+- [أمان البيانات](https://tabseet-tech.pages.dev/security.html): تدابير الأمان المتبعة في منصتنا.
+- [إخلاء المسؤولية](https://tabseet-tech.pages.dev/dmca.html): سياسة حقوق النشر (DMCA).
