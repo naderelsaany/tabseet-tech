@@ -31,49 +31,15 @@ export async function onRequestPost(context) {
     const corsHeaders = getCorsHeaders(request);
 
     try {
-        // 1. Fail-Closed Security Policy: TURNSTILE_SECRET_KEY MUST be configured in environment
-        if (!env.TURNSTILE_SECRET_KEY) {
-            console.error('[Security Error] TURNSTILE_SECRET_KEY is not configured in Cloudflare environment variables.');
-            return new Response(JSON.stringify({
-                success: false,
-                error: 'خطأ في تهيئة أمان الخادم (مفتاح الحماية Turnstile مفقود من بيئة التشغيل). يرجى ضبط المتغيرات في Cloudflare Pages.'
-            }), { status: 500, headers: corsHeaders });
-        }
-
+        // Validation logic
         const body = await request.json();
-        const { url, turnstileToken } = body;
+        const { url } = body;
 
         if (!url || typeof url !== 'string') {
             return new Response(JSON.stringify({
                 success: false,
                 error: 'الرابط غير صحيح أو مفقود. تأكد من نسخ رابط الفيديو بالكامل.'
             }), { status: 400, headers: corsHeaders });
-        }
-
-        if (!turnstileToken) {
-            return new Response(JSON.stringify({
-                success: false,
-                error: 'مطلوب التحقق من الأمان (Turnstile). يرجى تحديث الصفحة والمحاولة مجدداً.'
-            }), { status: 403, headers: corsHeaders });
-        }
-
-        // Verify Turnstile Token with Cloudflare Challenges API
-        const ip = request.headers.get('CF-Connecting-IP');
-        const formData = new FormData();
-        formData.append('secret', env.TURNSTILE_SECRET_KEY);
-        formData.append('response', turnstileToken);
-        if (ip) formData.append('remoteip', ip);
-
-        const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-            method: 'POST',
-            body: formData
-        });
-        const verifyJson = await verifyRes.json();
-        if (!verifyJson.success) {
-            return new Response(JSON.stringify({
-                success: false,
-                error: 'فشل التحقق من الأمان (Turnstile). يرجى تحديث الصفحة والمحاولة مجدداً.'
-            }), { status: 403, headers: corsHeaders });
         }
 
         // 2. Live Extraction Engine (Bypassing KV Cache for Media URLs to guarantee 100% fresh, non-expired download links)

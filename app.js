@@ -82,18 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (stateResults) stateResults.classList.remove('active');
     }
 
-    // Cloudflare Turnstile Token Capture
-    window.turnstileToken = null;
-    window.onloadTurnstileCallback = function() {
-        if (typeof turnstile !== 'undefined' && document.getElementById('turnstile-widget')) {
-            turnstile.render('#turnstile-widget', {
-                // تم الربط بالمفتاح الحي الرسمي لموقع Tabseet Tech من Cloudflare Turnstile
-                sitekey: '0x4AAAAAAD9zUhcLm_sbSrUq', // Tabseet Tech Live Sitekey
-                callback: (token) => { window.turnstileToken = token; },
-                'error-callback': () => { console.warn('[Turnstile] Challenge encountered an error.'); }
-            });
-        }
-    };
+
 
     if (retryBtn && input) {
         retryBtn.addEventListener('click', () => {
@@ -146,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const res = await fetch('/api/extract', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ url, turnstileToken: window.turnstileToken || null }),
+                    body: JSON.stringify({ url }),
                     signal: controller.signal
                 });
                 clearTimeout(timeoutId);
@@ -179,8 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
                                 stateResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
                             }
                         }
-                        if (typeof turnstile !== 'undefined') turnstile.reset();
-                        window.turnstileToken = null;
                         return;
                     } else {
                         throw new Error((json && json.error) ? json.error : 'لم نتمكن من استخراج الفيديو من السيرفر.');
@@ -221,8 +208,6 @@ document.addEventListener('DOMContentLoaded', () => {
                                     stateResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
                                 }
                             }
-                            if (typeof turnstile !== 'undefined') turnstile.reset();
-                            window.turnstileToken = null;
                             return;
                         }
                     } catch (e) {
@@ -245,8 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     errorMessage.textContent = err.message || 'عفواً، لم نتمكن من معالجة هذا الرابط حالياً. تأكد من أن الفيديو عام ومتاح للجميع واضغط إعادة المحاولة.';
                 }
                 if (stateError) stateError.classList.add('active');
-                if (typeof turnstile !== 'undefined') turnstile.reset();
-                window.turnstileToken = null;
                 return;
             }
         });
